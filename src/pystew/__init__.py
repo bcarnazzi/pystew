@@ -60,9 +60,9 @@ def doctor():
 
 
 @cli.command()
-@click.argument("package", nargs=-1, required=True)
+@click.argument("packages", nargs=-1, required=True)
 def link(package: tuple[str, ...]):
-    """Link managed dotfiles"""
+    """Link packages with stow"""
     for p in set(package):
         try:
             stow("-d", STEW_REPOSITORY, p)  # type: ignore
@@ -74,7 +74,7 @@ def link(package: tuple[str, ...]):
 
 @cli.command()
 def list():
-    """List managed dotfiles"""
+    """List managed packages"""
     repo_path = pathlib.Path(STEW_REPOSITORY)
     if not repo_path.exists() or not repo_path.is_dir():
         print(f":x: The directory {STEW_REPOSITORY} does not exist or is not a folder.")
