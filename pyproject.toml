@@ -1,15 +1,11 @@
 [project]
 name = "pystew"
-version = "0.1.0"
+version = "0.1.1"
 description = "Add your description here"
 readme = "README.md"
 authors = [{ name = "Bruno Carnazzi", email = "bcarnazzi@gmail.com" }]
 requires-python = ">=3.13"
-dependencies = [
-    "click>=8.2.1",
-    "rich>=14.1.0",
-    "sh>=2.2.2",
-]
+dependencies = ["click>=8.2.1", "rich>=14.1.0", "sh>=2.2.2"]
 
 [project.scripts]
 pystew = "pystew:cli"
