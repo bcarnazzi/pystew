@@ -99,3 +99,7 @@ def list():
     for item in sorted(repo_path.iterdir()):
         if item.is_dir() and item.name not in EXCLUDES:
             print_tree(item)
+
+
+if __name__ == "__main__":
+    cli()
