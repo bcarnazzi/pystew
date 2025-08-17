@@ -62,6 +62,7 @@ def doctor():
 @cli.command()
 @click.argument("package", nargs=-1, required=True)
 def link(package: tuple[str, ...]):
+    """Link managed dotfiles"""
     for p in set(package):
         try:
             stow("-d", STEW_REPOSITORY, p)  # type: ignore
